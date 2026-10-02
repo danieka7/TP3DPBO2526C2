@@ -9,9 +9,9 @@ public class Controller extends Agent{
     }
 
     // konstruktor
-    public Controller(String nama, String asalNegara, String daftarAbility, int tingkatKesulitan, 
+    public Controller(String nama, String asalNegara, AbilityBasic abilityC, AbilityBasic abilityQ, AbilitySignature abilityE, AbilityUltimate ultimate, 
         String tipeController, int ukuranSmoke, double radiusJangkauan){
-        super(nama, asalNegara, daftarAbility, tingkatKesulitan);
+        super(nama, asalNegara, abilityC, abilityQ, abilityE, ultimate);
         this.tipeController = tipeController;
         this.ukuranSmoke = ukuranSmoke;
         this.radiusJangkauan = radiusJangkauan;
@@ -24,7 +24,7 @@ public class Controller extends Agent{
     public int getUkuranSmoke(){
         return ukuranSmoke;
     }
-    public double getJumlahSmoke(){
+    public double getRadiusJangkauan(){
         return radiusJangkauan;
     }
 
@@ -35,7 +35,17 @@ public class Controller extends Agent{
     public void setUkuranSmoke(int ukuranSmoke){
         this.ukuranSmoke = ukuranSmoke;
     }
-    public void setJarakJangkauan(double radiusJangkauan){
+    public void setRadiusJangkauan(double radiusJangkauan){
         this.radiusJangkauan = radiusJangkauan;
+    }
+
+    // method
+    public void tampilkanInfoController(){
+        System.out.println("[ CONTROLLER  ]");
+        super.tampilkanInfoAgent();
+        System.err.println();
+        System.err.println("Tipe Controller     : " + tipeController);
+        System.err.println("Ukuran Smoke        : " + ukuranSmoke);
+        System.err.println("Radius Jangkauan    : " + radiusJangkauan + " meter");
     }
 }

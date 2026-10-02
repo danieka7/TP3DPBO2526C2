@@ -8,9 +8,9 @@ public class Duelist extends Agent{
     }
 
     // konstruktor 
-    public Duelist(String nama, String asalNegara, String daftarAbility, int tingkatKesulitan,
+    public Duelist(String nama, String asalNegara, AbilityBasic abilityC, AbilityBasic abilityQ, AbilitySignature abilityE, AbilityUltimate ultimate,
         String tipeDuelist, String tingkatMobilitas, String tingkatAgresivitas){
-        super(nama, asalNegara, daftarAbility, tingkatKesulitan);
+        super(nama, asalNegara, abilityC, abilityQ, abilityE, ultimate);
         this.tipeDuelist = tipeDuelist;
         this.tingkatMobilitas = tingkatMobilitas;
         this.tingkatAgresivitas = tingkatAgresivitas;
@@ -36,5 +36,15 @@ public class Duelist extends Agent{
     }
     public void setTingkatAgresivitas(String tingkatAgresivitas){
         this.tingkatAgresivitas = tingkatAgresivitas;
+    }
+
+    // method
+    public void tampilkanInfoDuelist(){
+        System.out.println("[   DUELIST   ]");
+        super.tampilkanInfoAgent();
+        System.err.println();
+        System.err.println("Tipe Duelist        : " + tipeDuelist);
+        System.err.println("Tingkat Mobilitas   : " + tingkatMobilitas);
+        System.err.println("Tingkat Agresivitas : " + tingkatAgresivitas);
     }
 }
