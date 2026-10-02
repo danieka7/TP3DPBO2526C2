@@ -36,9 +36,6 @@ void printSemua(vector<Agent*>& daftarAgent){
 }
 
 int main() {
-    // Objek dibuat langsung (tanpa new) sehingga otomatis dibersihkan saat main selesai.
-    // Saat dikirim ke konstruktor, alamatnya diambil dengan tanda &.
-
     // ------------ ABILITY -------------------
     // DUELIST
     // jett
@@ -104,22 +101,29 @@ int main() {
 
     vector<Agent*> daftarAgent;
 
-
     // data awal
-    daftarAgent.push_back(&jett);
-    daftarAgent.push_back(&brimstone);
     cout << "\n===============================================================" << endl;
     cout << "        SEBELUM PENAMBAHAN DATA (Jumlah Agent: " << daftarAgent.size() << ")" << endl;
-    cout << "===============================================================";
-    printSemua(daftarAgent);
-
+    cout << "===============================================================" << endl;
+    if (daftarAgent.size() == 0){
+        cout << ">>>>        Belum ada Agent yang ditampilkan." << endl;
+    } else{
+        printSemua(daftarAgent);
+    }
+    
     // penambahan data
+    cout << "===============================================================" << endl;
+    cout << "                     MENAMBAHKAN DATA.....                     " << endl;
+    cout << "===============================================================" << endl;
+    cout << ">>>>            Agent berhasil ditambahkan." << endl;
     daftarAgent.push_back(&phoenix);
-    daftarAgent.push_back(&omen);
-    daftarAgent.push_back(&sova);
+    // daftarAgent.push_back(&jett);
+    daftarAgent.push_back(&brimstone);
+    // daftarAgent.push_back(&omen);
     daftarAgent.push_back(&breach);
-    daftarAgent.push_back(&chamber);
+    // daftarAgent.push_back(&sova);
     daftarAgent.push_back(&sage);
+    // daftarAgent.push_back(&chamber);
     cout << "===============================================================" << endl;
     cout << "        SESUDAH PENAMBAHAN DATA (Jumlah Agent: " << daftarAgent.size() << ")" << endl;
     cout << "===============================================================";

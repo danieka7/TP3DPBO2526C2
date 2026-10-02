@@ -102,20 +102,27 @@ def main():
     daftarAgent = []
 
     # data awal
-    daftarAgent.append(jett)
-    daftarAgent.append(brimstone)
     print("===============================================================")
     print("        SEBELUM PENAMBAHAN DATA (Jumlah Agent: " + str(len(daftarAgent)) + ")")
-    print("===============================================================", end="")
-    printSemua(daftarAgent)
+    print("===============================================================")
+    if len(daftarAgent) == 0:
+        print(">>>>        Belum ada Agent yang ditampilkan.")
+    else: 
+        printSemua(daftarAgent)
 
     # penambahan data
-    daftarAgent.append(phoenix)
-    daftarAgent.append(omen)
+    print("===============================================================",)
+    print("                     MENAMBAHKAN DATA.....                     ")
+    print("===============================================================")
+    print(">>>>            Agent berhasil ditambahkan.")
+    daftarAgent.append(jett)
+    # daftarAgent.append(phoenix)
+    daftarAgent.append(brimstone)
+    # daftarAgent.append(omen)
     daftarAgent.append(sova)
-    daftarAgent.append(breach)
+    # daftarAgent.append(breach)
     daftarAgent.append(chamber)
-    daftarAgent.append(sage)
+    # daftarAgent.append(sage)
     print("===============================================================")
     print("        SESUDAH PENAMBAHAN DATA (Jumlah Agent: " + str(len(daftarAgent)) + ")")
     print("===============================================================", end="")

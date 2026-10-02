@@ -94,22 +94,31 @@ public class Main {
 
         ArrayList<Agent> daftarAgent = new ArrayList<>();
 
-        
         // data awal
-        daftarAgent.add(jett);
-        daftarAgent.add(brimstone);
         System.out.println("===============================================================");
         System.out.println("        SEBELUM PENAMBAHAN DATA (Jumlah Agent: " + daftarAgent.size() + ")");
-        System.out.print("===============================================================");
-        printSemua(daftarAgent);
+        System.out.println("===============================================================");
+        if (daftarAgent.size() == 0){
+            System.out.println(">>>>        Belum ada Agent yang ditampilkan.");
+        } else {
+            printSemua(daftarAgent);
+        }
         
         // penambahan data
-        daftarAgent.add(phoenix);
+        System.out.println("===============================================================");
+        System.out.println("                     MENAMBAHKAN DATA.....                     ");
+        System.out.println("===============================================================");
+        System.out.println(">>>>            Agent berhasil ditambahkan.");
+        daftarAgent.add(jett);
+        // daftarAgent.add(phoenix);
         daftarAgent.add(omen);
+        // daftarAgent.add(brimstone);
         daftarAgent.add(sova);
-        daftarAgent.add(breach);
+        // daftarAgent.add(breach);
         daftarAgent.add(chamber);
-        daftarAgent.add(sage);
+        // daftarAgent.add(sage);
+
+
         System.out.println("===============================================================");
         System.out.println("        SESUDAH PENAMBAHAN DATA (Jumlah Agent: " + daftarAgent.size() + ")");
         System.out.print("===============================================================");
