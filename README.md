@@ -57,23 +57,6 @@ Program ini memodelkan sistem **Agent (karakter)** dalam game **Valorant** beser
 ### Desain Diagram
   ![diagram](<TP3_design.png>)
 
-#### Inheritance pada Kelas Ability
-
-Kelas **Ability** adalah superclass yang menyimpan atribut umum yang dimiliki oleh semua kemampuan, yaitu nama, deskripsi, durasi, dan biaya. Dari kelas ini diturunkan tiga subclass, yaitu **AbilityBasic**, **AbilitySignature**, dan **AbilityUltimate**. Setiap subclass mewarisi seluruh atribut **Ability**, lalu menambahkan atribut khusus sesuai jenisnya. **AbilityBasic** menambahkan <u>jumlahCharge</u> untuk menyatakan berapa kali kemampuan dasar dapat digunakan. **AbilitySignature** menambahkan cooldown, yaitu waktu jeda sebelum kemampuan khas agen dapat dipakai kembali. **AbilityUltimate** menambahkan <u>poinDibutuhkan</u>, yaitu poin yang harus dikumpulkan sebelum ultimate bisa diaktifkan. Dengan pewarisan ini, atribut umum cukup ditulis sekali di **Ability**, sementara perbedaan tiap jenis kemampuan ditangani oleh masing-masing subclass.
-
-#### Inheritance pada Kelas Agent
-
-Kelas **Agent** adalah superclass yang menyimpan atribut umum seluruh agen, yaitu <u>nama</u>, <u>asalNegara</u>, serta empat kemampuan: <u>abilityC</u>, <u>abilityQ</u>, <u>abilityE</u>, dan <u>ultimate</u>. Dari kelas ini diturunkan empat subclass berdasarkan peran (role), yaitu **Duelist**, **Controller**, **Initiator**, dan **Sentinel**. Masing-masing mewarisi atribut **Agent** dan menambahkan atribut spesifik perannya:
-  - **Duelist** menambahkan <u>tipeDuelist</u>, <u>tingkatMobilitas</u>, dan <u>tingkatAgresivitas</u>, yang mencerminkan gaya bermain menyerang.
-  - **Controller** menambahkan <u>tipeController</u>, <u>ukuranSmoke</u>, dan <u>radiusJangkauan</u>, yang berkaitan dengan pengendalian area.
-  - **Initiator** menambahkan <u>tipeInitiator</u>, <u>radiusEfekGangguan</u>, dan <u>radiusInformasi</u>, yang berkaitan dengan membuka jalan dan mengumpulkan informasi.
-  - **Sentinel** menambahkan <u>tipeSentinel</u>, <u>radiusPenjagaan</u>, dan <u>radiusPemasangan</u>, yang berkaitan dengan pertahanan dan pemasangan perangkat.
-
-#### Composition antara Agent dan Ability
-
-Hubungan Composition (ditandai dengan belah ketupat hitam) menunjukkan bahwa **Agent** memiliki (has-a) objek **Ability**. Keempat atribut kemampuan pada **Agent** (<u>abilityC</u>, <u>abilityQ</u>, <u>abilityE</u>, dan <u>ultimate</u>) bertipe **Ability**, sehingga **Agent** tersusun dari objek-objek **Ability** tersebut. Karena berupa komposisi, hubungannya bersifat kuat: **Ability** merupakan bagian yang tidak terpisahkan dari **Agent**. Objek **Ability** dibuat bersama **Agent**, dan apabila **Agent** dihapus maka **Ability** miliknya ikut tidak berlaku. Dalam praktiknya, <u>abilityC</u> dan <u>abilityQ</u> dapat berupa **AbilityBasic**, <u>abilityE</u> berupa **AbilitySignature**, dan <u>ultimate</u> berupa **AbilityUltimate**, memanfaatkan polimorfisme dari hierarki **Ability**.
-
-
 ### Struktur Data Kelas 
 - #### Agent (Parent)
   | Atribut                           | Keterangan          |
@@ -135,6 +118,23 @@ Hubungan Composition (ditandai dengan belah ketupat hitam) menunjukkan bahwa **A
   | Atribut                    | Keterangan                 |
   | -------------------------- | -------------------------- |
   | **poinDibutuhkan** *(int)* | Poin yang dibutuhkan (orb) |
+
+#### Inheritance pada Kelas Ability
+
+Kelas **Ability** adalah superclass yang menyimpan atribut umum yang dimiliki oleh semua kemampuan, yaitu nama, deskripsi, durasi, dan biaya. Dari kelas ini diturunkan tiga subclass, yaitu **AbilityBasic**, **AbilitySignature**, dan **AbilityUltimate**. Setiap subclass mewarisi seluruh atribut **Ability**, lalu menambahkan atribut khusus sesuai jenisnya. **AbilityBasic** menambahkan <u>jumlahCharge</u> untuk menyatakan berapa kali kemampuan dasar dapat digunakan. **AbilitySignature** menambahkan cooldown, yaitu waktu jeda sebelum kemampuan khas agen dapat dipakai kembali. **AbilityUltimate** menambahkan <u>poinDibutuhkan</u>, yaitu poin yang harus dikumpulkan sebelum ultimate bisa diaktifkan. Dengan pewarisan ini, atribut umum cukup ditulis sekali di **Ability**, sementara perbedaan tiap jenis kemampuan ditangani oleh masing-masing subclass.
+
+#### Inheritance pada Kelas Agent
+
+Kelas **Agent** adalah superclass yang menyimpan atribut umum seluruh agen, yaitu <u>nama</u>, <u>asalNegara</u>, serta empat kemampuan: <u>abilityC</u>, <u>abilityQ</u>, <u>abilityE</u>, dan <u>ultimate</u>. Dari kelas ini diturunkan empat subclass berdasarkan peran (role), yaitu **Duelist**, **Controller**, **Initiator**, dan **Sentinel**. Masing-masing mewarisi atribut **Agent** dan menambahkan atribut spesifik perannya:
+  - **Duelist** menambahkan <u>tipeDuelist</u>, <u>tingkatMobilitas</u>, dan <u>tingkatAgresivitas</u>, yang mencerminkan gaya bermain menyerang.
+  - **Controller** menambahkan <u>tipeController</u>, <u>ukuranSmoke</u>, dan <u>radiusJangkauan</u>, yang berkaitan dengan pengendalian area.
+  - **Initiator** menambahkan <u>tipeInitiator</u>, <u>radiusEfekGangguan</u>, dan <u>radiusInformasi</u>, yang berkaitan dengan membuka jalan dan mengumpulkan informasi.
+  - **Sentinel** menambahkan <u>tipeSentinel</u>, <u>radiusPenjagaan</u>, dan <u>radiusPemasangan</u>, yang berkaitan dengan pertahanan dan pemasangan perangkat.
+
+#### Composition antara Agent dan Ability
+
+Hubungan Composition (ditandai dengan belah ketupat hitam) menunjukkan bahwa **Agent** memiliki (has-a) objek **Ability**. Keempat atribut kemampuan pada **Agent** (<u>abilityC</u>, <u>abilityQ</u>, <u>abilityE</u>, dan <u>ultimate</u>) bertipe **Ability**, sehingga **Agent** tersusun dari objek-objek **Ability** tersebut. Karena berupa komposisi, hubungannya bersifat kuat: **Ability** merupakan bagian yang tidak terpisahkan dari **Agent**. Objek **Ability** dibuat bersama **Agent**, dan apabila **Agent** dihapus maka **Ability** miliknya ikut tidak berlaku. Dalam praktiknya, <u>abilityC</u> dan <u>abilityQ</u> dapat berupa **AbilityBasic**, <u>abilityE</u> berupa **AbilitySignature**, dan <u>ultimate</u> berupa **AbilityUltimate**, memanfaatkan polimorfisme dari hierarki **Ability**.
+
 
 
 ## Dokumentasi
