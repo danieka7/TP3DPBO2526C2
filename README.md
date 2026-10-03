@@ -72,7 +72,7 @@ Program ini merupakan implementasi dari konsep OOP dengan tema **Agent (karakter
   | **abilityE** *(AbilitySignature)* | Ability Signature E |
   | **ultimate** *(AbilityUltimate)*  | Ability Ultimate X  |
 
-  **Method**: tampilkanInfoController()
+  **Method**: getter setter semua atribut, tampilkanInfoController()
     
 - #### Controller (Anak Agent)
   | Atribut                        | Keterangan               |
@@ -81,7 +81,7 @@ Program ini merupakan implementasi dari konsep OOP dengan tema **Agent (karakter
   | **ukuranSmoke** *(int)*        | Ukuran Smoke             |
   | **radiusJangkauan** *(double)* | Radius Jangkauan (meter) |
 
-  **Method**: tampilkanInfoAgent()
+  **Method**: getter setter semua atribut, tampilkanInfoAgent()
 
 - #### Duelist (Anak Agent)
   | Atribut                           | Keterangan          |
@@ -90,7 +90,7 @@ Program ini merupakan implementasi dari konsep OOP dengan tema **Agent (karakter
   | **tingkatMobilitas** *(string)*   | Tingkat Mobilitas   |
   | **tingkatAgresivitas** *(string)* | Tingkat Agresivitas |
 
-  **Method**: tampilkanInfoDuelist()
+  **Method**: getter setter semua atribut, tampilkanInfoDuelist()
 
 - #### Initiator (Anak Agent)
   | Atribut                        | Keterangan                   |
@@ -99,7 +99,7 @@ Program ini merupakan implementasi dari konsep OOP dengan tema **Agent (karakter
   | **radiusEfekGangguan** *(int)* | Radius Efek Gangguan (meter) |
   | **radiusInformasi** *(int)*    | Radius Informasi (meter)     |
 
-  **Method**: tampilkanInfoInitiator()
+  **Method**: getter setter semua atribut, tampilkanInfoInitiator()
 
 - #### Sentinel (Anak Agent)
   | Atribut                      | Keterangan                |
@@ -108,7 +108,7 @@ Program ini merupakan implementasi dari konsep OOP dengan tema **Agent (karakter
   | **radiusPenjagaan** *(int)*  | Radius Penjagaan (meter)  |
   | **radiusPemasangan** *(int)* | Radius Pemasangan (meter) |
 
-  **Method**: tampilkanInfoSentinel()
+  **Method**: getter setter semua atribut, tampilkanInfoSentinel()
 
 - #### Ability (Parent, Komposisi Agent)
   | Atribut                  | Keterangan             |
@@ -118,28 +118,29 @@ Program ini merupakan implementasi dari konsep OOP dengan tema **Agent (karakter
   | **durasi** *(double)*    | Durasi Ability (detik) |
   | **biaya** *(int)*        | Biaya Ability (kredit) |
 
-  **Method**: tampilkanInfoAbility()
+  **Method**: getter setter semua atribut, tampilkanInfoAbility()
 
 - #### AbilityBasic (Anak Ability)
   | Atribut                  | Keterangan    |
   | ------------------------ | ------------- |
   | **jumlahCharge** *(int)* | Jumlah Charge |
 
-  **Method**: tampilkanInfoAgent()
+  **Method**: getter setter semua atribut, tampilkanInfoBasic()
 
 - #### AbilitySignature (Anak Ability)
   | Atribut                 | Keterangan               |
   | ----------------------- | ------------------------ |
   | **cooldown** *(double)* | Cooldown Ability (detik) |
 
-  **Method**: tampilkanInfoAgent()
+  **Method**: getter setter semua atribut, tampilkanInfoSignature()
 
 - #### AbilityUltimate (Anak Ability) 
   | Atribut                    | Keterangan                 |
   | -------------------------- | -------------------------- |
   | **poinDibutuhkan** *(int)* | Poin yang dibutuhkan (orb) |
 
-  **Method**: tampilkanInfoAgent()
+  **Method**: getter setter semua atribut, tampilkanInfoUltimate()
+
 ### Inheritance pada Kelas Ability
 
 Kelas **Ability** adalah superclass yang menyimpan atribut umum yang dimiliki oleh semua kemampuan, yaitu nama, deskripsi, durasi, dan biaya. Dari kelas ini diturunkan tiga subclass, yaitu **AbilityBasic**, **AbilitySignature**, dan **AbilityUltimate**. Setiap subclass mewarisi seluruh atribut **Ability**, lalu menambahkan atribut khusus sesuai jenisnya. **AbilityBasic** menambahkan <u>jumlahCharge</u> untuk menyatakan berapa kali kemampuan dasar dapat digunakan. **AbilitySignature** menambahkan cooldown, yaitu waktu jeda sebelum kemampuan khas agen dapat dipakai kembali. **AbilityUltimate** menambahkan <u>poinDibutuhkan</u>, yaitu poin yang harus dikumpulkan sebelum ultimate bisa diaktifkan. Dengan pewarisan ini, atribut umum cukup ditulis sekali di **Ability**, sementara perbedaan tiap jenis kemampuan ditangani oleh masing-masing subclass.
@@ -156,21 +157,16 @@ Kelas **Agent** adalah superclass yang menyimpan atribut umum seluruh agen, yait
 
 Hubungan Composition (ditandai dengan belah ketupat hitam) menunjukkan bahwa **Agent** memiliki (has-a) objek **Ability**. Keempat atribut kemampuan pada **Agent** (<u>abilityC</u>, <u>abilityQ</u>, <u>abilityE</u>, dan <u>ultimate</u>) bertipe **Ability**, sehingga **Agent** tersusun dari objek-objek **Ability** tersebut. Karena berupa komposisi, hubungannya bersifat kuat: **Ability** merupakan bagian yang tidak terpisahkan dari **Agent**. Objek **Ability** dibuat bersama **Agent**, dan apabila **Agent** dihapus maka **Ability** miliknya ikut tidak berlaku. Dalam praktiknya, <u>abilityC</u> dan <u>abilityQ</u> dapat berupa **AbilityBasic**, <u>abilityE</u> berupa **AbilitySignature**, dan <u>ultimate</u> berupa **AbilityUltimate**, memanfaatkan polimorfisme dari hierarki **Ability**.
 
-
-
 ## Dokumentasi
-- ### Dokumentasi Program C++
-  - #### Tambah Data Baru
-    ![alt](<cpp/dokumentasi/cpp_add.png>)
-  - #### Tampilkan Semua Data
-    ![alt](<cpp/dokumentasi/cpp_view.png>)
-- ### Dokumentasi Program Java
-  - #### Tambah Data Baru
-    ![alt](<java/dokumentasi/java_add.png>)
-  - #### Tampilkan Semua Data
-    ![alt](<java/dokumentasi/java_view.png>)
-- ### Dokumentasi Program Python
-  - #### Tambah Data Baru
-    ![alt](<python/dokumentasi/python_add.png>)
-  - #### Tampilkan Semua Data
-    ![alt](<python/dokumentasi/python_view.png>)
+- ### C++
+  - #### Tampilan Output Lengkap
+    ![output_cpp](<cpp/dokumentasi/cpp_1.png>)
+    ![output_cpp](<cpp/dokumentasi/cpp_2.png>)
+- ### Java
+  - #### Tampilan Output Lengkap
+    ![output_java](<java/dokumentasi/java_1.png>)
+    ![output_java](<java/dokumentasi/java_2.png>)
+- ### Python
+  - #### Tambah Output Lengkap
+    ![output_python](<python/dokumentasi/python_1.png>)
+    ![output_python](<python/dokumentasi/python_2.png>)
