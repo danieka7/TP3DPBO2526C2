@@ -42,9 +42,9 @@ public class Initiator extends Agent {
     public void tampilkanInfoInitiator(){
         System.out.println("[  INITIATOR  ]");
         super.tampilkanInfoAgent();
-        System.err.println();
-        System.err.println("Tipe Initiator       : " + tipeInitiator);
-        System.err.println("Radius Efek Gangguan : " + radiusEfekGangguan + " meter");
-        System.err.println("Radius Informasi     : " + radiusInformasi + " meter");
+        System.out.println();
+        System.out.println("Tipe Initiator       : " + tipeInitiator);
+        System.out.println("Radius Efek Gangguan : " + radiusEfekGangguan + " meter");
+        System.out.println("Radius Informasi     : " + radiusInformasi + " meter");
     }
 }

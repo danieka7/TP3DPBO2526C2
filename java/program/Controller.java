@@ -43,9 +43,9 @@ public class Controller extends Agent{
     public void tampilkanInfoController(){
         System.out.println("[ CONTROLLER  ]");
         super.tampilkanInfoAgent();
-        System.err.println();
-        System.err.println("Tipe Controller     : " + tipeController);
-        System.err.println("Ukuran Smoke        : " + ukuranSmoke);
-        System.err.println("Radius Jangkauan    : " + radiusJangkauan + " meter");
+        System.out.println();
+        System.out.println("Tipe Controller     : " + tipeController);
+        System.out.println("Ukuran Smoke        : " + ukuranSmoke);
+        System.out.println("Radius Jangkauan    : " + radiusJangkauan + " meter");
     }
 }

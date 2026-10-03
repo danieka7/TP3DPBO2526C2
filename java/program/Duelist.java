@@ -42,9 +42,9 @@ public class Duelist extends Agent{
     public void tampilkanInfoDuelist(){
         System.out.println("[   DUELIST   ]");
         super.tampilkanInfoAgent();
-        System.err.println();
-        System.err.println("Tipe Duelist        : " + tipeDuelist);
-        System.err.println("Tingkat Mobilitas   : " + tingkatMobilitas);
-        System.err.println("Tingkat Agresivitas : " + tingkatAgresivitas);
+        System.out.println();
+        System.out.println("Tipe Duelist        : " + tipeDuelist);
+        System.out.println("Tingkat Mobilitas   : " + tingkatMobilitas);
+        System.out.println("Tingkat Agresivitas : " + tingkatAgresivitas);
     }
 }

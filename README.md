@@ -3,7 +3,7 @@
 ## Janji
 Saya **Dani Eka Saputra** dengan NIM **2501158** mengerjakan Tugas Praktikum 3 pada Mata Kuliah Desain Pemrograman Berorientasi Objek untuk keberkahan-Nya maka saya tidak melakukan kecurangan seperti yang telah dispesifikasikan. Aamiin
 
-Program ini memodelkan sistem **Agent (karakter)** dalam game **Valorant** beserta **Ability (kemampuan)** yang dimilikinya. Desainnya memanfaatkan dua konsep utama OOP, yaitu **inheritance (pewarisan)** dan **composition (komposisi)**.
+Program ini merupakan implementasi dari konsep OOP dengan tema **Agent (karakter)** dalam game **Valorant** beserta **Ability (kemampuan)** yang dimilikinya. Desainnya memanfaatkan dua konsep utama OOP, yaitu **inheritance (pewarisan)** dan **composition (komposisi)**. Program ini menampilkan data yang dibuat secara statis.
 
 ## 🗂️ Struktur Projek
 ```
@@ -51,6 +51,10 @@ Program ini memodelkan sistem **Agent (karakter)** dalam game **Valorant** beser
 └── TP3_design.png
 ```
 
+## Fitur Utama
+### C++ / Java / Python (CLI / Terminal)
+ - **Menambahkan** data baru secara statis
+ - **Menampilkan** data yang disimpan dalam array of object dengan terstruktur
 
 ## Desain dan Penjelasan
 
@@ -67,6 +71,8 @@ Program ini memodelkan sistem **Agent (karakter)** dalam game **Valorant** beser
   | **abilityQ** *(AbilityBasic)*     | Ability Basic Q     |
   | **abilityE** *(AbilitySignature)* | Ability Signature E |
   | **ultimate** *(AbilityUltimate)*  | Ability Ultimate X  |
+
+  **Method**: tampilkanInfoController()
     
 - #### Controller (Anak Agent)
   | Atribut                        | Keterangan               |
@@ -75,12 +81,16 @@ Program ini memodelkan sistem **Agent (karakter)** dalam game **Valorant** beser
   | **ukuranSmoke** *(int)*        | Ukuran Smoke             |
   | **radiusJangkauan** *(double)* | Radius Jangkauan (meter) |
 
+  **Method**: tampilkanInfoAgent()
+
 - #### Duelist (Anak Agent)
   | Atribut                           | Keterangan          |
   | --------------------------------- | ------------------- |
   | **tipeDuelist** *(string)*        | Tipe Duelist        |
   | **tingkatMobilitas** *(string)*   | Tingkat Mobilitas   |
   | **tingkatAgresivitas** *(string)* | Tingkat Agresivitas |
+
+  **Method**: tampilkanInfoDuelist()
 
 - #### Initiator (Anak Agent)
   | Atribut                        | Keterangan                   |
@@ -89,6 +99,8 @@ Program ini memodelkan sistem **Agent (karakter)** dalam game **Valorant** beser
   | **radiusEfekGangguan** *(int)* | Radius Efek Gangguan (meter) |
   | **radiusInformasi** *(int)*    | Radius Informasi (meter)     |
 
+  **Method**: tampilkanInfoInitiator()
+
 - #### Sentinel (Anak Agent)
   | Atribut                      | Keterangan                |
   | ---------------------------- | ------------------------- |
@@ -96,7 +108,9 @@ Program ini memodelkan sistem **Agent (karakter)** dalam game **Valorant** beser
   | **radiusPenjagaan** *(int)*  | Radius Penjagaan (meter)  |
   | **radiusPemasangan** *(int)* | Radius Pemasangan (meter) |
 
-- #### Ability (Parent)
+  **Method**: tampilkanInfoSentinel()
+
+- #### Ability (Parent, Komposisi Agent)
   | Atribut                  | Keterangan             |
   | ------------------------ | ---------------------- |
   | **nama** *(string)*      | Nama Ability           |
@@ -104,26 +118,33 @@ Program ini memodelkan sistem **Agent (karakter)** dalam game **Valorant** beser
   | **durasi** *(double)*    | Durasi Ability (detik) |
   | **biaya** *(int)*        | Biaya Ability (kredit) |
 
+  **Method**: tampilkanInfoAbility()
+
 - #### AbilityBasic (Anak Ability)
   | Atribut                  | Keterangan    |
   | ------------------------ | ------------- |
   | **jumlahCharge** *(int)* | Jumlah Charge |
+
+  **Method**: tampilkanInfoAgent()
 
 - #### AbilitySignature (Anak Ability)
   | Atribut                 | Keterangan               |
   | ----------------------- | ------------------------ |
   | **cooldown** *(double)* | Cooldown Ability (detik) |
 
+  **Method**: tampilkanInfoAgent()
+
 - #### AbilityUltimate (Anak Ability) 
   | Atribut                    | Keterangan                 |
   | -------------------------- | -------------------------- |
   | **poinDibutuhkan** *(int)* | Poin yang dibutuhkan (orb) |
 
-#### Inheritance pada Kelas Ability
+  **Method**: tampilkanInfoAgent()
+### Inheritance pada Kelas Ability
 
 Kelas **Ability** adalah superclass yang menyimpan atribut umum yang dimiliki oleh semua kemampuan, yaitu nama, deskripsi, durasi, dan biaya. Dari kelas ini diturunkan tiga subclass, yaitu **AbilityBasic**, **AbilitySignature**, dan **AbilityUltimate**. Setiap subclass mewarisi seluruh atribut **Ability**, lalu menambahkan atribut khusus sesuai jenisnya. **AbilityBasic** menambahkan <u>jumlahCharge</u> untuk menyatakan berapa kali kemampuan dasar dapat digunakan. **AbilitySignature** menambahkan cooldown, yaitu waktu jeda sebelum kemampuan khas agen dapat dipakai kembali. **AbilityUltimate** menambahkan <u>poinDibutuhkan</u>, yaitu poin yang harus dikumpulkan sebelum ultimate bisa diaktifkan. Dengan pewarisan ini, atribut umum cukup ditulis sekali di **Ability**, sementara perbedaan tiap jenis kemampuan ditangani oleh masing-masing subclass.
 
-#### Inheritance pada Kelas Agent
+### Inheritance pada Kelas Agent
 
 Kelas **Agent** adalah superclass yang menyimpan atribut umum seluruh agen, yaitu <u>nama</u>, <u>asalNegara</u>, serta empat kemampuan: <u>abilityC</u>, <u>abilityQ</u>, <u>abilityE</u>, dan <u>ultimate</u>. Dari kelas ini diturunkan empat subclass berdasarkan peran (role), yaitu **Duelist**, **Controller**, **Initiator**, dan **Sentinel**. Masing-masing mewarisi atribut **Agent** dan menambahkan atribut spesifik perannya:
   - **Duelist** menambahkan <u>tipeDuelist</u>, <u>tingkatMobilitas</u>, dan <u>tingkatAgresivitas</u>, yang mencerminkan gaya bermain menyerang.
@@ -131,7 +152,7 @@ Kelas **Agent** adalah superclass yang menyimpan atribut umum seluruh agen, yait
   - **Initiator** menambahkan <u>tipeInitiator</u>, <u>radiusEfekGangguan</u>, dan <u>radiusInformasi</u>, yang berkaitan dengan membuka jalan dan mengumpulkan informasi.
   - **Sentinel** menambahkan <u>tipeSentinel</u>, <u>radiusPenjagaan</u>, dan <u>radiusPemasangan</u>, yang berkaitan dengan pertahanan dan pemasangan perangkat.
 
-#### Composition antara Agent dan Ability
+### Composition antara Agent dan Ability
 
 Hubungan Composition (ditandai dengan belah ketupat hitam) menunjukkan bahwa **Agent** memiliki (has-a) objek **Ability**. Keempat atribut kemampuan pada **Agent** (<u>abilityC</u>, <u>abilityQ</u>, <u>abilityE</u>, dan <u>ultimate</u>) bertipe **Ability**, sehingga **Agent** tersusun dari objek-objek **Ability** tersebut. Karena berupa komposisi, hubungannya bersifat kuat: **Ability** merupakan bagian yang tidak terpisahkan dari **Agent**. Objek **Ability** dibuat bersama **Agent**, dan apabila **Agent** dihapus maka **Ability** miliknya ikut tidak berlaku. Dalam praktiknya, <u>abilityC</u> dan <u>abilityQ</u> dapat berupa **AbilityBasic**, <u>abilityE</u> berupa **AbilitySignature**, dan <u>ultimate</u> berupa **AbilityUltimate**, memanfaatkan polimorfisme dari hierarki **Ability**.
 

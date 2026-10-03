@@ -43,9 +43,9 @@ public class Sentinel extends Agent{
     public void tampilkanInfoSentinel(){
         System.out.println("[   SENTINEL  ]");
         super.tampilkanInfoAgent();
-        System.err.println();
-        System.err.println("Tipe Sentinel        : " + tipeSentinel);
-        System.err.println("Radius Penjagaan     : " + radiusPenjagaan + " meter");
-        System.err.println("Radius Pemasangan    : " + radiusPemasangan + " meter");
+        System.out.println();
+        System.out.println("Tipe Sentinel        : " + tipeSentinel);
+        System.out.println("Radius Penjagaan     : " + radiusPenjagaan + " meter");
+        System.out.println("Radius Pemasangan    : " + radiusPemasangan + " meter");
     }
 }
