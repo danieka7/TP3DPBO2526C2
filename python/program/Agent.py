@@ -1,8 +1,3 @@
-# Agent.py
-# Kelas induk (parent) untuk semua agent. Agent memiliki 4 ability:
-# C (Basic), Q (Basic), E (Signature), dan X (Ultimate).
-# Padanan dari Agent.java
-
 class Agent:
     # Konstruktor (kosong & berparameter digabung memakai nilai default None)
     def __init__(self, nama=None, asalNegara=None, abilityC=None, abilityQ=None,

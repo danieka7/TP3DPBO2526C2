@@ -1,7 +1,3 @@
-# AbilitySignature.py
-# Ability tipe Signature (tombol E). Turunan dari Ability.
-# Padanan dari AbilitySignature.java
-
 from Ability import Ability
 
 

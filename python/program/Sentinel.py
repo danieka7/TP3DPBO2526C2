@@ -1,7 +1,3 @@
-# Sentinel.py
-# Agent dengan peran Sentinel. Turunan dari Agent.
-# Padanan dari Sentinel.java
-
 import sys
 from Agent import Agent
 

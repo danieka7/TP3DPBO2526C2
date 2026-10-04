@@ -36,11 +36,6 @@ public:
         this->ultimate = ultimate;
     }
 
-    // destruktor virtual: tidak ada di Java, tapi di C++ diperlukan agar dynamic_cast
-    // (padanan instanceof) bisa dipakai pada pointer Agent, dan agar objek anak
-    // yang dihapus lewat pointer Agent dibersihkan dengan benar.
-    virtual ~Agent(){
-    }
 
     // getter
     string getNama(){
@@ -100,5 +95,10 @@ public:
 
         cout << "[X] ULTIMATE" << endl;
         ultimate->tampilkanInfoUltimate();
+    }
+
+    // destruktor
+    // virtual wajib, agar dynamic_cast di Main.cpp bisa dipakai
+    virtual ~Agent(){
     }
 };

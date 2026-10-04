@@ -1,7 +1,3 @@
-# Initiator.py
-# Agent dengan peran Initiator. Turunan dari Agent.
-# Padanan dari Initiator.java
-
 import sys
 from Agent import Agent
 

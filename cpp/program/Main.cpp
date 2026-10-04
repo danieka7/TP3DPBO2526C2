@@ -115,7 +115,6 @@ int main() {
     cout << "===============================================================" << endl;
     cout << "                     MENAMBAHKAN DATA.....                     " << endl;
     cout << "===============================================================" << endl;
-    cout << ">>>>            Agent berhasil ditambahkan." << endl;
     daftarAgent.push_back(&phoenix);
     // daftarAgent.push_back(&jett);
     daftarAgent.push_back(&brimstone);
@@ -124,6 +123,7 @@ int main() {
     // daftarAgent.push_back(&sova);
     daftarAgent.push_back(&sage);
     // daftarAgent.push_back(&chamber);
+    cout << ">>>>            Agent berhasil ditambahkan." << endl;
     cout << "===============================================================" << endl;
     cout << "        SESUDAH PENAMBAHAN DATA (Jumlah Agent: " << daftarAgent.size() << ")" << endl;
     cout << "===============================================================";

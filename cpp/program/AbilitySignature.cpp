@@ -1,7 +1,6 @@
 #pragma once
 #include "Ability.cpp"
 
-// agar tidak perlu menulis std:: di depan cout, string, vector, dan lainnya
 using namespace std;
 
 class AbilitySignature : public Ability{
@@ -34,5 +33,9 @@ public:
     void tampilkanInfoSignature(){
         Ability::tampilkanInfoAbility();
         cout << "    Cooldown  : " << cooldown << " detik" << endl;
+    }
+
+    // destruktor
+    ~AbilitySignature(){
     }
 };

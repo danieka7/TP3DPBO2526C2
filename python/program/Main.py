@@ -1,7 +1,3 @@
-# Main.py
-# Program utama. Padanan dari Main.java
-# Jalankan dengan: python Main.py
-
 from AbilityBasic import AbilityBasic
 from AbilitySignature import AbilitySignature
 from AbilityUltimate import AbilityUltimate
@@ -98,7 +94,7 @@ def main():
     sage = Sentinel("Sage", "China", barrierOrb, slowOrb, healingOrb, resurrection, "Staller", 6, 5)
     chamber = Sentinel("Chamber", "France", trademark, headhunter, rendezvous, tourDeForce, "Trapper", 10, 8)
 
-    # ArrayList<Agent> di Java = list biasa di Python
+    # list 
     daftarAgent = []
 
     # data awal
@@ -129,6 +125,5 @@ def main():
     printSemua(daftarAgent)
 
 
-# Padanan "public static void main": titik masuk program
 if __name__ == "__main__":
     main()

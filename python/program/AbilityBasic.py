@@ -1,7 +1,3 @@
-# AbilityBasic.py
-# Ability tipe Basic (tombol C dan Q). Turunan dari Ability.
-# Padanan dari AbilityBasic.java
-
 from Ability import Ability
 
 

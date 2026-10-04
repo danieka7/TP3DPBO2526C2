@@ -50,9 +50,13 @@ public:
     void tampilkanInfoSentinel(){
         cout << "[   SENTINEL  ]" << endl;
         Agent::tampilkanInfoAgent();
-        cerr << endl;
-        cerr << "Tipe Sentinel        : " << tipeSentinel << endl;
-        cerr << "Radius Penjagaan     : " << radiusPenjagaan << " meter" << endl;
-        cerr << "Radius Pemasangan    : " << radiusPemasangan << " meter" << endl;
+        cout << endl;
+        cout << "Tipe Sentinel        : " << tipeSentinel << endl;
+        cout << "Radius Penjagaan     : " << radiusPenjagaan << " meter" << endl;
+        cout << "Radius Pemasangan    : " << radiusPemasangan << " meter" << endl;
+    }
+
+    // destruktor
+    ~Sentinel(){
     }
 };

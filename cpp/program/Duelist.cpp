@@ -1,7 +1,6 @@
 #pragma once
 #include "Agent.cpp"
 
-// agar tidak perlu menulis std:: di depan cout, string, vector, dan lainnya
 using namespace std;
 
 class Duelist : public Agent{
@@ -50,9 +49,13 @@ public:
     void tampilkanInfoDuelist(){
         cout << "[   DUELIST   ]" << endl;
         Agent::tampilkanInfoAgent();
-        cerr << endl;
-        cerr << "Tipe Duelist        : " << tipeDuelist << endl;
-        cerr << "Tingkat Mobilitas   : " << tingkatMobilitas << endl;
-        cerr << "Tingkat Agresivitas : " << tingkatAgresivitas << endl;
+        cout << endl;
+        cout << "Tipe Duelist        : " << tipeDuelist << endl;
+        cout << "Tingkat Mobilitas   : " << tingkatMobilitas << endl;
+        cout << "Tingkat Agresivitas : " << tingkatAgresivitas << endl;
+    }
+
+    // destruktor
+    ~Duelist(){
     }
 };

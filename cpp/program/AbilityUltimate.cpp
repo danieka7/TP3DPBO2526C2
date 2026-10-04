@@ -1,7 +1,6 @@
 #pragma once
 #include "Ability.cpp"
 
-// agar tidak perlu menulis std:: di depan cout, string, vector, dan lainnya
 using namespace std;
 
 class AbilityUltimate : public Ability{
@@ -33,5 +32,9 @@ public:
     void tampilkanInfoUltimate(){
         Ability::tampilkanInfoAbility();
         cout << "    Poin Dibutuhkan  : " << poinDibutuhkan << " orb" << endl;
+    }
+
+    // destruktor
+    ~AbilityUltimate(){
     }
 };

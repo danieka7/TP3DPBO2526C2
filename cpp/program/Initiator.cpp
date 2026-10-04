@@ -1,7 +1,6 @@
 #pragma once
 #include "Agent.cpp"
 
-// agar tidak perlu menulis std:: di depan cout, string, vector, dan lainnya
 using namespace std;
 
 class Initiator : public Agent {
@@ -23,7 +22,7 @@ public:
         this->tipeInitiator = tipeInitiator;
         this->radiusEfekGangguan = radiusEfekGangguan;
         this->radiusInformasi = radiusInformasi;
-    }
+}
 
     // getter
     string getTipeInitiator(){
@@ -50,9 +49,13 @@ public:
     void tampilkanInfoInitiator(){
         cout << "[  INITIATOR  ]" << endl;
         Agent::tampilkanInfoAgent();
-        cerr << endl;
-        cerr << "Tipe Initiator       : " << tipeInitiator << endl;
-        cerr << "Radius Efek Gangguan : " << radiusEfekGangguan << " meter" << endl;
-        cerr << "Radius Informasi     : " << radiusInformasi << " meter" << endl;
+        cout << endl;
+        cout << "Tipe Initiator       : " << tipeInitiator << endl;
+        cout << "Radius Efek Gangguan : " << radiusEfekGangguan << " meter" << endl;
+        cout << "Radius Informasi     : " << radiusInformasi << " meter" << endl;
+    }
+
+    // destruktor
+    ~Initiator(){
     }
 };

@@ -1,7 +1,3 @@
-# Duelist.py
-# Agent dengan peran Duelist. Turunan dari Agent.
-# Padanan dari Duelist.java
-
 import sys
 from Agent import Agent
 

@@ -1,7 +1,3 @@
-# AbilityUltimate.py
-# Ability tipe Ultimate (tombol X). Turunan dari Ability.
-# Padanan dari AbilityUltimate.java
-
 from Ability import Ability
 
 

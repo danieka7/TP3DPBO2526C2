@@ -1,7 +1,6 @@
 #pragma once
 #include "Agent.cpp"
 
-// agar tidak perlu menulis std:: di depan cout, string, vector, dan lainnya
 using namespace std;
 
 class Controller : public Agent{
@@ -52,9 +51,13 @@ public:
     void tampilkanInfoController(){
         cout << "[ CONTROLLER  ]" << endl;
         Agent::tampilkanInfoAgent();
-        cerr << endl;
-        cerr << "Tipe Controller     : " << tipeController << endl;
-        cerr << "Ukuran Smoke        : " << ukuranSmoke << endl;
-        cerr << "Radius Jangkauan    : " << radiusJangkauan << " meter" << endl;
+        cout << endl;
+        cout << "Tipe Controller     : " << tipeController << endl;
+        cout << "Ukuran Smoke        : " << ukuranSmoke << endl;
+        cout << "Radius Jangkauan    : " << radiusJangkauan << " meter" << endl;
+    }
+
+    // destruktor
+    ~Controller(){
     }
 };

@@ -2,7 +2,6 @@
 #include <iostream>
 #include <string>
 
-// agar tidak perlu menulis std:: di depan cout, string, vector, dan lainnya
 using namespace std;
 
 class Ability {
@@ -61,4 +60,7 @@ public:
         cout << "    Biaya     : " << biaya << " kredit" << endl;
     }
 
+    // destruktor
+    ~Ability(){
+    }
 };

@@ -1,7 +1,3 @@
-# Controller.py
-# Agent dengan peran Controller. Turunan dari Agent.
-# Padanan dari Controller.java
-
 import sys
 from Agent import Agent
 
